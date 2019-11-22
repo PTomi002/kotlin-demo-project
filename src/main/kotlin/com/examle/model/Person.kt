@@ -6,6 +6,7 @@ import com.examle.enums.Sex
 // public static final String = ...
 const val UNIX_LINE_SEPARATOR = "\n"
 
+// Creates: toString, equals, hashCode, copy (SHALLOW COPY!!!!)
 // data = automatic fun generations beside getter/setter
 data class Person(val name: String, val age: Int = -1) : Comparable<Person> {
     override fun compareTo(other: Person): Int =
@@ -16,6 +17,7 @@ data class Person(val name: String, val age: Int = -1) : Comparable<Person> {
         }
 
     val isMale: Sex
+        // custom accessor
         get() {
             return if (name.startsWith("T")) Sex.MALE else Sex.FEMALE
         }
