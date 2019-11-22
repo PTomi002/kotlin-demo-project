@@ -8,10 +8,18 @@ import com.examle.numbers.Num
 import com.examle.numbers.Sum
 import java.util.*
 
+// Default visibility: public
+// By default everything is final
+// Default r/w: read-only
 fun main(args: Array<String>) {
 
     // Person tests
     val person = Person("Tamas", 28)
+    val person2 = person
+    // equality
+    println(person == person2)  // (...).equals(...)
+    println(person === person2) // reference equality
+
     val personOther = Person("Erzsi", 54)
     val personThree = Person("TSanyi", 22)
 
@@ -48,6 +56,24 @@ fun main(args: Array<String>) {
 
     //call extension function
     println(person.test())
+
+    // * operator, vararg, inflix call
+    testVararg("a", "b")
+
+    // destructuring declaration
+    val (name, age) = person
+    println("Destructured: $name, $age")
+}
+
+// vararg = val variable
+fun testVararg(vararg array: String) {
+    // inflix call
+    // 1.to("2")
+    val mapOfStrings = mapOf(1 to "2")
+    println(mapOfStrings)
+    // spread operator
+    val listOfStrings = listOf(*array)
+    println(listOfStrings)
 }
 
 // last value will be the result
