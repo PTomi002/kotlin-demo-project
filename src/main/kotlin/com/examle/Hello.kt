@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     val person = Person("Tamas", 28)
     val person2 = person
     // equality
-    println(person == person2)  // (...).equals(...)
+    println(person == person2)  // person?.equals(person2) ?: person2 == null
     println(person === person2) // reference equality
 
     val personOther = Person("Erzsi", 54)

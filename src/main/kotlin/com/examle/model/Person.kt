@@ -35,6 +35,6 @@ fun whenControlFlow(person: Person) {
 }
 
 // extension function
-// received=Person receiver=Kotlin
+// receiver=Person
 // compiles to: static test(Person person) {return person.name.last()}
 fun Person.test(): Char = this.name.last()
