@@ -42,4 +42,15 @@ fun main() {
     val person = Person()
     println("Person: ${person.name}")
     person.name = "Tamas"
+
+    // invoke convention
+    val greeter = Greeter()
+    greeter("Test", 13)
+}
+
+// invoke convention
+class Greeter {
+    operator fun invoke(values: String, number: Int) {
+        println("Invoked as a function with: $values and $number")
+    }
 }
